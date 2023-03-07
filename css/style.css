@@ -25,7 +25,7 @@ html {
 /*globales*/
 
 body {
-  background-color: var(--obscuro);
+  background-color: var(--otro);
   font-size: 2rem;
   line-height: 1.5;
 }
@@ -81,7 +81,10 @@ h3 {
 /*navegación*/
 
 .navegacion {
-  background-color: var(--otro);
+  -webkit-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  -moz-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  background-color: var(--obscuro);
   padding: .5rem 0;
   display: flex;
   justify-content: center;
@@ -104,7 +107,7 @@ h3 {
 /*footer*/
 
 .footer {
-  background-color: var(--otro);
+  background-color: var(--obscuro);
   padding: 2rem 0;
   margin-top: 2rem;
 
@@ -136,21 +139,67 @@ h3 {
 /*productos*/
 
 .producto {
-
+  background-color: var(--obscuro);
+  padding: 1rem;
+  -webkit-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  -moz-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
 }
 
 .producto__imagen {
-
-}
-
-.producto__informacion {
-
+  width: 100%;/*CON ESTO HAGO QUE LAS IMAGENES SEAN RESPONSIVAS ES DECIR QUE SE ADAPTEN AL TAMAÑO DE LA PANTALLA*/
 }
 
 .producto__nombre{
-
+  font-size: 3rem;
+  color: var(--ligth);
 }
 
 .producto__precio {
+  font-size: 2rem;
+  color: var(--fluor1);
+}
 
+.producto__nombre,
+.producto__precio {
+  font-family: var(--font1);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;/*interlineado*/
+}
+
+/**graficos*/
+
+.grafico {
+  -webkit-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  -moz-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
+  min-height: 30rem;
+  background-repeat: no-repeat; /*permite que no se repita la imagen*/
+  background-size: cover; /*hace que la imagen tome todo el epacio deisponible*/
+  grid-column: 1 / 3; /*se quita de --camisas y --node ya que se repite y se asigna en el grafico ya que comparten la misma clase*/
+
+}
+
+.grafico--camisas {
+  grid-row: 2 / 3 ; /*define la fila*/
+  /*grid-column: 1 / 3; define la columna*/
+  background-image: url(../img/grafico1.jpg); /*imagen que va a ocupar esa posicion en el grid*/
+
+}
+
+.grafico--node {
+  background-image: url(../img/grafico2.jpg);
+  /*grid-column: 1 / 3*/;
+  grid-row: 8 / 9;
+
+}
+
+@media (min-width: 768px) {
+  .grafico--node {
+    grid-row: 5 / 6;
+    grid-column: 2 / 4;
+  
+  }
+    
 }
