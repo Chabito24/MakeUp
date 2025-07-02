@@ -27,7 +27,7 @@ html {
 body {
   background-color: var(--otro);
   font-size: 2rem;
-  line-height: 1.5;
+  line-height: 1.5; /*interlineado*/
 }
 
 p {
@@ -71,7 +71,7 @@ h3 {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: center; /*centra horizontalmente cuando el display es display flex*/
 }
 
 .header__logo {
@@ -236,7 +236,7 @@ h3 {
 /*bloques*/
 
 .bloques {
-  display: grid;
+  display: grid; /*columnas para vista inferior a 768px*/
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
@@ -246,10 +246,10 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
   }
     
-}
+} /*media query para visualizacion en pantallas superiores a 768px*/
 
 .bloque {
-  text-align: center;
+  text-align: center; /*cenra el contenido de la clase bloque*/
 }
 
 
@@ -271,6 +271,8 @@ h3 {
 
 }
 
+/*Formulrio*/
+
 .formulario {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -288,21 +290,23 @@ h3 {
 }
 
 .formulario__submit {
-  background-color: var(--obscuro);
-  border: none;
-  font-size: 2rem;
-  font-family: var(--font1);
+  background-color: var(--obscuro); /*color del boton*/
+  border: none; /*elimina el borde del boton*/
+  font-size: 2rem; /*tamaño texto boton*/
+  font-family: var(--font1); /*fuente del boton*/
   color: var(--secundario);
   padding: 1.5rem;
   -webkit-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
   -moz-box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
   box-shadow: 1px 1px 33px -6px rgba(252,0,255,0.7);
-  grid-column: 1 / 3;
+  grid-column: 1 / 3;/*como la clase formulario ya tiene display grid posiciona le boton para que tome el espacio de las dos columnas*/
+  transition: background-color .3s ease; /*transicion del color de fondo del boton*/
 }
 
 .formulario__submit:hover {
-  cursor: pointer;
-  background-color: var(--otro);
+  cursor: pointer; /*para que se vea la mano al poner el cursor sobre el boton*/
+  background-color: var(--fluor2); /*cambia el color de fondo del boton al pasar el cursor por encima*/
+  color: var(--ligth); /*cambia el color del texto del boton al pasar el cursor por encima*/
   -webkit-box-shadow: 0px 1px 10px 1px rgba(207,255,0,1);
   -moz-box-shadow: 0px 1px 10px 1px rgba(207,255,0,1);
   box-shadow: 0px 1px 10px 1px rgba(207,255,0,1);
